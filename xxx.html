@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+</body>
+<script>
+    //    function a(){
+    //         console.log('我再a里面')
+    //         return new Promise(function(resolve, reject){
+    //             setTimeout(function(){
+    //                 let acc = "hahahahahaa" 
+    //                 resolve(acc)
+    //             }, 1000)
+    //         })
+    //     }
+    //      function b(){
+    //         v = a() 
+
+    //         return v
+    //     }
+    //     console.log(b())
+    //     console.log("我先打印哦")
+    //----------------------------------------------------------------
+    function a(params) {
+        console.log(params)
+        function b(params) {
+            console.log(params)
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    let acc = "hahahahahaa"
+                    resolve(acc)
+                }, 1000)
+            })
+        }
+        let bde = b(params)
+        return bde
+    }
+
+
+    async function abc(params) {
+        console.log(params)
+        console.log(a)
+        let ab = await a(params)
+        console.log(ab)
+    }
+    abc("我是参数")
+
+
+</script>
+
+</html>
